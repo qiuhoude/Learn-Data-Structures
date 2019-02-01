@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 不用jdk的 math函数实现求平方根的方式
+ * 不用math函数实现求平方根的方式
  *
  * @author qiukun
  * @create 2019-02-01 11:50
