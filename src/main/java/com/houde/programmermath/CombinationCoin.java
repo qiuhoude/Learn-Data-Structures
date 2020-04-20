@@ -18,7 +18,7 @@ public class CombinationCoin {
     /**
      * 金币种类
      */
-    private static final int[] COIN_TYPE = {1, 5, 10};
+    private static final int[] COIN_TYPE = {1,2};
 
     /**
      * 金币组合构成
@@ -43,7 +43,7 @@ public class CombinationCoin {
     }
 
     public static void main(String[] args) {
-        int totalMoney = 13;
+        int totalMoney = 4;
         List<List<Integer>> allResult = new ArrayList<>();
         coinCombination(totalMoney, new ArrayList<>(), allResult);
         logger.debug("一共有 {} 种可能性", allResult.size());

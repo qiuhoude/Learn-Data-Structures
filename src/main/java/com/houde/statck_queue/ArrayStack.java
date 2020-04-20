@@ -40,7 +40,6 @@ public class ArrayStack<E> implements Stack<E> {
     public E pop() {
         return array.removeLast();
     }
-
     @Override
     public E peek() {
         return array.getLast();
