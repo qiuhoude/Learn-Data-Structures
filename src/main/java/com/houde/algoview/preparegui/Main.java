@@ -10,6 +10,6 @@ public class Main {
 //            AlgoFrame frame = new AlgoFrame("Welcome", 500, 500);
 //        });
         AlgoVisualizer circleAnimation = new AlgoVisualizer(
-                500, 500, 10);
+                500, 500, 5);
     }
 }

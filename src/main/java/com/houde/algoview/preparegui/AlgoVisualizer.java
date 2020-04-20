@@ -1,6 +1,9 @@
 package com.houde.algoview.preparegui;
 
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 /**
  * 动画控制器Controller
@@ -12,6 +15,7 @@ public class AlgoVisualizer {
     private final Circle[] circles;
     private final int sceneWidth;
     private final int sceneHeight;
+    private boolean isAnimated = true;
 
     public AlgoVisualizer(int sceneWidth, int sceneHeight, int N) {
         this.sceneWidth = sceneWidth;
@@ -29,6 +33,7 @@ public class AlgoVisualizer {
         EventQueue.invokeLater(() -> {
             AlgoFrame frame = new AlgoFrame("Welcome", sceneWidth, sceneHeight);
 //            frame.render(circles);
+            frame.addKeyListener(new AlgoKeyListener());
             new Thread(() -> {
                 while (true) {
                     // 绘制数据
@@ -37,13 +42,23 @@ public class AlgoVisualizer {
                     CanvasUtils.pause(20); //暂停
 
                     // 更新数据
-                    for (Circle circle : circles) {
-                        circle.move(0, 0, sceneWidth, sceneHeight);
+                    if (isAnimated) {
+                        for (Circle circle : circles) {
+                            circle.move(0, 0, sceneWidth, sceneHeight);
+                        }
                     }
 
                 }
             }).start();
         });
     }
-    
+
+    private class AlgoKeyListener extends KeyAdapter {
+        @Override
+        public void keyPressed(KeyEvent e) {
+            if (e.getKeyChar() == ' ') {
+                isAnimated = !isAnimated;
+            }
+        }
+    }
 }
