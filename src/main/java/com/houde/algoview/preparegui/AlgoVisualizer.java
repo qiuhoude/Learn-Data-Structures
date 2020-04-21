@@ -1,5 +1,6 @@
 package com.houde.algoview.preparegui;
 
+import com.houde.algoview.common.CanvasUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

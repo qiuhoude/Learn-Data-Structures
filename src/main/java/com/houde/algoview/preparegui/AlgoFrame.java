@@ -1,5 +1,7 @@
 package com.houde.algoview.preparegui;
 
+import com.houde.algoview.common.CanvasUtils;
+
 import javax.swing.*;
 import java.awt.*;
 
