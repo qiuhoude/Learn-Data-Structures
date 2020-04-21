@@ -87,7 +87,11 @@ public class AlgoFrame extends JFrame {
             CanvasUtils.setStrokeWidth(g2d, 1);
             CanvasUtils.setColor(g2d, Color.BLUE);
             for (Circle circle : circles) {
-                CanvasUtils.strokeCircle(g2d, circle.x, circle.y, circle.getR());
+                if (!circle.isFilled) {
+                    CanvasUtils.strokeCircle(g2d, circle.x, circle.y, circle.getR());
+                } else {
+                    CanvasUtils.fillCircle(g2d, circle.x, circle.y, circle.getR());
+                }
             }
         }
 
